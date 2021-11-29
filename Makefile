@@ -11,8 +11,8 @@ dist/index.html:
 test:
 	go test ./...
 
-build: dist/index.html
+build: 
 	CGO_ENABLED=0 go build -o ./bin/webui .
 
-dev: dist/index.html
-	reflex -r '.go' -s -- sh -c 'go run main.go'
+dev: 
+	reflex -r '.go' -s -- sh -c 'go run server.go'

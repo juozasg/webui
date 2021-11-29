@@ -1,0 +1,13 @@
+import mixins/helpers
+
+h3 List of Kustomizations:
+
+ul
+  each $item in Items
+    li 
+      strong 
+        #{$item.ObjectMeta.Name}
+      p suspend=#{$item.Spec.Suspend}
+      pre 
+        #{$item} 
+
