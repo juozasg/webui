@@ -32,24 +32,7 @@ To set up a development environment
 3. Install `reflex` for automated server builds: `go get github.com/cespare/reflex`
 4. [Install `kubebuilder`](https://book.kubebuilder.io/quick-start.html#installation)
 5. `npm install` to install UI dependencies
-6. `make dev` to compile and run the app
-7. `npm start` to start the frontend dev server (with hot-reloading)
-8. Navigate to <http://localhost:1234> to view the frontend dev UI (with hot-reloading)
-9. Navigate to <http://localhost:9000> to see the UI served from the `go` program
-
-To generate protobuf files natively on your OS, install [protoc](https://grpc.io/docs/protoc-installation/), then install these packages:
-
-```shell
-go get -u github.com/golang/protobuf/protoc-gen-go
-go get -u github.com/twitchtv/twirp/protoc-gen-twirp
-go get -u go.larrymyers.com/protoc-gen-twirp_typescript
-```
-
-Then run:
-
-```shell
-make proto
-```
+6. `npm start` to start the frontend dev server (with hot-reloading)
 
 To run tests:
 

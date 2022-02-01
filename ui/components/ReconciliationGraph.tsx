@@ -5,7 +5,7 @@ import * as React from "react";
 import { renderToString } from "react-dom/server";
 import styled from "styled-components";
 import { UnstructuredObjectWithParent } from "../lib/hooks/kustomizations";
-import { UnstructuredObject } from "../lib/rpc/clusters";
+import { UnstructuredObject } from "../lib/client";
 import Graph from "./Graph";
 
 export interface Props {

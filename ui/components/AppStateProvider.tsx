@@ -1,8 +1,10 @@
 import qs from "query-string";
 import * as React from "react";
 import { useLocation } from "react-router";
-import { Clusters, Context } from "../lib/rpc/clusters";
 import { AllNamespacesOption } from "../lib/types";
+
+import { Context } from "../lib/context";
+import { Client } from "../lib/client.js";
 
 export type AppContextType = {
   contexts: Context[];
@@ -14,7 +16,7 @@ export type AppContextType = {
   setNamespaces: (namespaces: string[]) => void;
   setCurrentNamespace: (namespace: string) => void;
   doAsyncError: (message: string, fatal?: boolean, detail?: Error) => void;
-  clustersClient: Clusters;
+  client: Client;
 };
 
 export const AppContext = React.createContext<AppContextType>(null as any);
@@ -24,7 +26,7 @@ type AppState = {
   loading: boolean;
 };
 
-export default function AppStateProvider({ clustersClient, ...props }) {
+export default function AppStateProvider({ client, ...props }) {
   const location = useLocation();
   const { context } = qs.parse(location.search);
   const [contexts, setContexts] = React.useState([]);
@@ -48,7 +50,7 @@ export default function AppStateProvider({ clustersClient, ...props }) {
   const query = qs.parse(location.search);
 
   const getNamespaces = (ctx) => {
-    clustersClient.listNamespacesForContext({ contextname: ctx }).then(
+    client.listNamespacesForContext({ contextname: ctx }).then(
       (nsRes) => {
         const nextNamespaces = nsRes.namespaces;
 
@@ -73,7 +75,7 @@ export default function AppStateProvider({ clustersClient, ...props }) {
 
   React.useEffect(() => {
     // Runs once on app startup.
-    clustersClient.listContexts({}).then(
+    client.listContexts({}).then(
       (res) => {
         setContexts(res.contexts);
         const ns = query.namespace || AllNamespacesOption;
@@ -112,7 +114,7 @@ export default function AppStateProvider({ clustersClient, ...props }) {
     setNamespaces,
     setCurrentNamespace,
     doAsyncError,
-    clustersClient,
+    client,
   };
 
   return <AppContext.Provider value={value} {...props} />;

@@ -1,7 +1,6 @@
 import _ from "lodash";
 import qs from "query-string";
 import { toast } from "react-toastify";
-import { DefaultClusters } from "./rpc/clusters";
 
 export const wrappedFetch = (url, opts: RequestInit = {}) => {
   return fetch(url, {
@@ -75,11 +74,6 @@ export const getNavValue = (currentPage: any): PageRoute | boolean => {
       return false;
   }
 };
-
-export const clustersClient = new DefaultClusters(
-  "/api/clusters",
-  wrappedFetch
-);
 
 export function notifySuccess(message: string) {
   toast["success"](message);
