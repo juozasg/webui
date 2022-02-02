@@ -1,0 +1,32 @@
+{
+  "name": "webui",
+  "version": "0.0.1",
+  "description": "Flux Web UI",
+  "repository": "git@github.com:fluxcd/webui.git",
+  "author": "Flux Maintainers",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "node esbuild.js dev",
+    "build": "node esbuild.js prod",
+    "svelte-check": "svelte-check",
+    "theme": "smui-theme compile public/build/smui.css -i src/theme",
+    "prebuild": "smui-theme compile public/build/smui.css -i src/theme"
+  },
+  "devDependencies": {
+    "@material/dom": "^13.0.0",
+    "@material/theme": "^13.0.0",
+    "@material/typography": "^13.0.0",
+    "@smui-extra/badge": "^6.0.0-beta.13",
+    "@smui/select": "^6.0.0-beta.13",
+    "@tsconfig/svelte": "^3.0.0",
+    "esbuild": "^0.14.16",
+    "esbuild-svelte": "^0.6.2",
+    "live-server": "^1.2.1",
+    "smui-theme": "^6.0.0-beta.13",
+    "svelte": "^3.46.3",
+    "svelte-check": "^2.4.1",
+    "svelte-preprocess": "^4.10.2",
+    "svelte-spa-router": "^3.2.0",
+    "typescript": "^4.5.5"
+  }
+}

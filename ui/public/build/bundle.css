@@ -1,0 +1,26 @@
+/* fakecss:/home/juozas/code/webui/ui/src/components/App.esbuild-svelte-fake-css */
+main.svelte-1leh42g.svelte-1leh42g {
+  text-align: center;
+  padding: 0em;
+  max-width: 240px;
+  margin: 0 auto;
+}
+.topnav.svelte-1leh42g.svelte-1leh42g {
+  display: flex;
+  justify-content: flex-end;
+}
+.topnav.svelte-1leh42g > div.svelte-1leh42g {
+  margin: 0 1rem;
+}
+h1.svelte-1leh42g.svelte-1leh42g {
+  color: purple;
+  text-transform: uppercase;
+  font-size: 4em;
+  font-weight: 100;
+}
+@media (min-width: 640px) {
+  main.svelte-1leh42g.svelte-1leh42g {
+    max-width: none;
+  }
+}
+/*# sourceMappingURL=bundle.css.map */
