@@ -12,8 +12,8 @@
 <main>
 	<div class="topnav">
 		<div>
-			<Select bind:value={selectedContext} label="Context">
-				<Icon class="material-icons" slot="leadingIcon">hub</Icon>
+			<Select bind:value={selectedContext} label="Context" variant="outlined">
+				<Icon color="primary" class="material-icons" slot="leadingIcon">hub</Icon>
 				{#each contextNames as cname}
 					<Option value={cname}>{cname}</Option>
 				{/each}
@@ -24,7 +24,7 @@
 
 		<div>
 			<Select bind:value={selectedNamespace} label="Namespace">
-				<Icon class="material-icons" slot="leadingIcon">spoke</Icon>
+				<Icon color="secondary" class="material-icons" slot="leadingIcon">spoke</Icon>
 					<Option value=all>all</Option>
 			</Select> 
 		</div>
@@ -45,6 +45,13 @@
 	.topnav {
 		display: flex;
 		justify-content: flex-end;
+		background: blue;
+		color: white !important;
+		padding: 1rem;
+	}
+
+	.material-icons {
+		color: white !important;
 	}
 
 	.topnav > div {

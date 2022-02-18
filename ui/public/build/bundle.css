@@ -1,25 +1,28 @@
 /* fakecss:/home/juozas/code/webui/ui/src/components/App.esbuild-svelte-fake-css */
-main.svelte-1leh42g.svelte-1leh42g {
+main.svelte-tkdkv0.svelte-tkdkv0 {
   text-align: center;
   padding: 0em;
   max-width: 240px;
   margin: 0 auto;
 }
-.topnav.svelte-1leh42g.svelte-1leh42g {
+.topnav.svelte-tkdkv0.svelte-tkdkv0 {
   display: flex;
   justify-content: flex-end;
+  background: blue;
+  color: white !important;
+  padding: 1rem;
 }
-.topnav.svelte-1leh42g > div.svelte-1leh42g {
+.topnav.svelte-tkdkv0 > div.svelte-tkdkv0 {
   margin: 0 1rem;
 }
-h1.svelte-1leh42g.svelte-1leh42g {
+h1.svelte-tkdkv0.svelte-tkdkv0 {
   color: purple;
   text-transform: uppercase;
   font-size: 4em;
   font-weight: 100;
 }
 @media (min-width: 640px) {
-  main.svelte-1leh42g.svelte-1leh42g {
+  main.svelte-tkdkv0.svelte-tkdkv0 {
     max-width: none;
   }
 }

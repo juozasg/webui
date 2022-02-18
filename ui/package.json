@@ -8,17 +8,11 @@
   "scripts": {
     "dev": "node esbuild.js dev",
     "build": "node esbuild.js prod",
-    "svelte-check": "svelte-check",
-    "theme": "smui-theme compile public/build/smui.css -i src/theme",
-    "prebuild": "smui-theme compile public/build/smui.css -i src/theme"
+    "svelte-check": "svelte-check"
   },
   "devDependencies": {
-    "@material/dom": "^13.0.0",
-    "@material/theme": "^13.0.0",
-    "@material/typography": "^13.0.0",
-    "@smui-extra/badge": "^6.0.0-beta.13",
-    "@smui/select": "^6.0.0-beta.13",
     "@tsconfig/svelte": "^3.0.0",
+    "carbon-components-svelte": "^0.57.1",
     "esbuild": "^0.14.16",
     "esbuild-svelte": "^0.6.2",
     "live-server": "^1.2.1",

@@ -11573,6 +11573,7 @@
     let current;
     icon = new icon_default({
       props: {
+        color: "primary",
         class: "material-icons",
         slot: "leadingIcon",
         $$slots: { default: [create_default_slot_32] },
@@ -11684,6 +11685,7 @@
     let current;
     icon = new icon_default({
       props: {
+        color: "secondary",
         class: "material-icons",
         slot: "leadingIcon",
         $$slots: { default: [create_default_slot7] },
@@ -11745,6 +11747,7 @@
     }
     let select0_props = {
       label: "Context",
+      variant: "outlined",
       $$slots: {
         leadingIcon: [create_leadingIcon_slot_1],
         default: [create_default_slot_42]
@@ -11791,11 +11794,11 @@
         t6 = text(ctx[0]);
         t7 = text("!");
         attr(pre, "class", "status");
-        attr(div0, "class", "svelte-1leh42g");
-        attr(div1, "class", "svelte-1leh42g");
-        attr(div2, "class", "topnav svelte-1leh42g");
-        attr(h1, "class", "svelte-1leh42g");
-        attr(main, "class", "svelte-1leh42g");
+        attr(div0, "class", "svelte-tkdkv0");
+        attr(div1, "class", "svelte-tkdkv0");
+        attr(div2, "class", "topnav svelte-tkdkv0");
+        attr(h1, "class", "svelte-tkdkv0");
+        attr(main, "class", "svelte-tkdkv0");
       },
       m(target, anchor) {
         insert(target, main, anchor);
