@@ -5,22 +5,24 @@
   "repository": "git@github.com:fluxcd/webui.git",
   "author": "Flux Maintainers",
   "license": "Apache-2.0",
+  "type": "module",
   "scripts": {
-    "dev": "node esbuild.js dev",
-    "build": "node esbuild.js prod",
-    "svelte-check": "svelte-check"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@tsconfig/svelte": "^3.0.0",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+    "@tsconfig/svelte": "^2.0.1",
     "carbon-components-svelte": "^0.59.0",
-    "esbuild": "^0.14.16",
-    "esbuild-svelte": "^0.6.2",
-    "live-server": "^1.2.1",
-    "object-assign": "4.1.1",
-    "svelte": "^3.46.3",
-    "svelte-check": "^2.4.1",
-    "svelte-preprocess": "^4.10.2",
-    "svelte-spa-router": "^3.2.0",
-    "typescript": "^4.5.5"
+    "carbon-icons-svelte": "^10.44.4",
+    "carbon-preprocess-svelte": "^0.6.0",
+    "svelte": "^3.44.0",
+    "svelte-check": "^2.2.7",
+    "svelte-preprocess": "^4.9.8",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0"
   }
 }

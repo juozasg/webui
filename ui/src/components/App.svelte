@@ -5,34 +5,32 @@
   let selectedContext: string = contextNames[0];
 
   let selectedNamespace = 'all';
+
+  import { Button } from "carbon-components-svelte";
 </script>
 
-<main>
-  <div class="topnav">
-    <div>
-      <p>select context</p>
-      <pre class="status">Context: {selectedContext}</pre>
-    </div>
-
-    <div>
-      <p>selected namespace</p>
-    </div>
+<div class="topnav">
+  <div>
+    <p>select context</p>
+    <pre class="status">Context: {selectedContext}</pre>
   </div>
 
-  <h1>Hello {name}!</h1>
+  <div>
+    <p>selected namespace</p>
+  </div>
+</div>
 
+<main>
+  <h1>Hello {name}!</h1>
+  <Button>Nada</Button>
 </main>
 
 <style>
   :global(body) {
     margin: 0;
   }
-
   main {
-    text-align: center;
-    padding: 0em;
-    max-width: 240px;
-    margin: 0 auto;
+    padding: 1rem;
   }
 
   .topnav {
