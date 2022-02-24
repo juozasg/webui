@@ -52,7 +52,7 @@
     const timer = setInterval(()=>{
       loadContexts();
       loadNamespaces($context);
-    }, 1000);
+    }, 20000);
 
     return () => {
       clearInterval(timer);
