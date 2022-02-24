@@ -2,6 +2,7 @@
   import {
     Select,
     SelectItem,
+    ToastNotification
   } from "carbon-components-svelte";
   import { onMount } from 'svelte';
 
@@ -11,15 +12,30 @@
 
   let contexts = [];
   let namespaces = [];
-
-  // async () => {}
+  let error;
 
   async function loadContexts() {
-    contexts = await getContexts();
+    try {
+      contexts = await getContexts();
+      error = null;
+    } catch (e) {
+      error = e;
+      console.log(error);
+    }
   }
 
   async function loadNamespaces(contextId) {
-    namespaces = await getNamespaces(contextId);
+    if(contextId == '') {
+      return;
+    }
+
+    try {
+      namespaces = await getNamespaces(contextId);
+      error = null;
+    } catch (e) {
+      error = e;
+      console.log(error);
+    }
   }
 
   loadContexts();
@@ -36,7 +52,7 @@
     const timer = setInterval(()=>{
       loadContexts();
       loadNamespaces($context);
-    }, 20000);
+    }, 1000);
 
     return () => {
       clearInterval(timer);
@@ -56,7 +72,17 @@
       <SelectItem value={n} text={n} />
     {/each}
   </Select>
+
+  {#if error}
+    <ToastNotification>
+      <strong slot="title">Error: </strong>
+      <strong slot="subtitle">{error.message}</strong>
+      <strong slot="caption">{new Date().toLocaleString()}</strong>
+    </ToastNotification>
+  {/if}
 </div>
+
+
 
 <style>
   .scope-selectors {
@@ -72,4 +98,12 @@
     margin-left: 1.5rem;
     margin-right: 4px;
   }
+
+  .scope-selectors > :global(.bx--toast-notification) {
+    position: absolute;
+    top: 56px;
+    right: 0px;
+    width: 25rem;
+  }
+
 </style>
