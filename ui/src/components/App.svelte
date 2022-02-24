@@ -102,6 +102,9 @@
     a.bx--side-nav__link[aria-current=page]::before, a.bx--side-nav__link--current::before {
       background-color: #3d6ddd;
     }
+    a.bx--side-nav__link[aria-current=page], a.bx--side-nav__link--current {
+      background-color: $flux-white-blue;
+    }
   }
 
 

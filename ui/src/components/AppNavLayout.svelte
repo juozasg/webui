@@ -19,7 +19,6 @@
 
   context.set('gcp');
   namespace.set('all');
-
 </script>
 
 <Header>
