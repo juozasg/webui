@@ -12,8 +12,13 @@
     Column,
   } from "carbon-components-svelte";
 
-  import {location} from 'svelte-spa-router';
+  import { location } from 'svelte-spa-router';
 
+  import { context, namespace } from '../stores';
+
+
+  context.set('gcp');
+  namespace.set('all');
 
 </script>
 
@@ -21,12 +26,12 @@
   <img class="logo" src="/favicon.png" alt="Flux Logo">
   <p class="title">Flux Web UI</p>
   <div class="scope-selectors">
-    <Select inline labelText="Context" selected="gcp">
+    <Select inline labelText="Context"  bind:selected={$context}>
       <SelectItem value="gcp" text="gcp" />
       <SelectItem value="kind-kind" text="kind-kind" />
     </Select>
 
-    <Select inline labelText="Namespace" selected="all">
+    <Select inline labelText="Namespace" bind:selected={$namespace}>
       <SelectItem value="all" text="all" />
       <SelectItem value="flux-system" text="flux-system" />
     </Select>
@@ -46,6 +51,8 @@
   <Grid>
     <Row>
       <Column>
+        <p>Context {$context}</p>
+        <p>Namespace {$namespace}</p>
         <slot></slot>
       </Column>
     </Row>
