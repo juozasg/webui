@@ -12,7 +12,7 @@
     Column,
   } from "carbon-components-svelte";
 
-  import {location} from 'svelte-spa-router'
+  import {location} from 'svelte-spa-router';
 
 
 </script>
@@ -53,12 +53,13 @@
 </Content>
 
 <style>
-  :global(a.active) {
-    color: red;
-  }
   /* hide the hamburger */
   :global(.bx--header__menu-toggle), :global(.bx--header__name) {
     display: none !important;
+  }
+
+  :global(header label) {
+    color: #afafaf !important;
   }
   
   .logo {
@@ -70,6 +71,7 @@
     margin-left: 0.75rem;
     font-size: 1.25rem;
     min-width: 130px;
+    color: white;
   }
 
   .scope-selectors {
@@ -83,6 +85,6 @@
   .scope-selectors > :global(.bx--form-item) {
     flex: 0 0 auto;
     margin-left: 1.5rem;
-    margin-right: 6px;
+    margin-right: 4px;
   }
 </style>
